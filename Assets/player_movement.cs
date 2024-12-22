@@ -25,7 +25,7 @@ public class player_movement : MonoBehaviour
     if (animator != null)
     {
         animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", movement.sqrMagnitude);
     }
 
     if (Input.GetButtonDown("Jump") && isGrounded)

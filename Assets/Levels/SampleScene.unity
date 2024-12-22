@@ -566,10 +566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c15e786effb7f54298b85029d971d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
   jumpForce: 5
-  rb: {fileID: 0}
-  animator: {fileID: 0}
+  rb: {fileID: 735285686}
+  animator: {fileID: 735285689}
 --- !u!95 &735285689
 Animator:
   serializedVersion: 7
