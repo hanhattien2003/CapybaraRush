@@ -19,24 +19,30 @@ public class player_movement : MonoBehaviour
     }
 
     void Update()
+{
+    movement.x = Input.GetAxisRaw("Horizontal");
+
+    if (animator != null)
     {
-        // Lấy đầu vào từ người dùng
-        movement.x = Input.GetAxisRaw("Horizontal");
-
-        // Cập nhật tham số cho Animator (nếu có)
-        if (animator != null)
-        {
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Speed", movement.sqrMagnitude);
-        }
-
-        // Xử lý nhảy
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Force);
-            isGrounded = false; // Chỉ cho phép nhảy khi đang trên mặt đất
-        }
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Horizontal", movement.sqrMagnitude);
     }
+
+    if (Input.GetButtonDown("Jump") && isGrounded)
+    {
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        isGrounded = false;
+    }
+
+    // Lật sprite khi di chuyển
+    if (movement.x != 0)
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = movement.x >0; // Lật sprite nếu di chuyển sang trái
+    }
+}
+
+
 
     void FixedUpdate()
     {
