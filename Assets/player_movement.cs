@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Tốc độ di chuyển
     public float jumpForce = 5f; // Lực nhảy
+    public float moveSpeed = 5f; // Tốc độ di chuyển
     public Rigidbody2D rb;      // Tham chiếu đến Rigidbody2D
-    public Animator animator;   // Tham chiếu đến Animator để xử lý hoạt ảnh
-
-    private Vector2 movement;   // Vector để lưu hướng di chuyển
     private bool isGrounded;    // Kiểm tra nhân vật có trên mặt đất không
+    public Animator animator;   // Tham chiếu đến Animator
+
+    private float horizontalInput; // Input di chuyển ngang
 
     void Awake()
     {
@@ -19,35 +19,41 @@ public class player_movement : MonoBehaviour
     }
 
     void Update()
-{
-    movement.x = Input.GetAxisRaw("Horizontal");
-
-    if (animator != null)
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Horizontal", movement.sqrMagnitude);
-    }
+        // Nhận đầu vào di chuyển ngang
+        horizontalInput = Input.GetAxis("Horizontal");
 
-    if (Input.GetButtonDown("Jump") && isGrounded)
-    {
-        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        isGrounded = false;
-    }
+        // Cập nhật tốc độ di chuyển
+        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
-    // Lật sprite khi di chuyển
-    if (movement.x != 0)
-    {
+        // Cập nhật giá trị Speed trong Animator (0 = đứng yên, >0 = chạy)
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+
+        // Quay đầu nhân vật khi di chuyển bằng cách lật sprite
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.flipX = movement.x > 0; // Lật sprite nếu di chuyển sang trái
-    }
-}
+        spriteRenderer.flipX = horizontalInput > 0; // Lật sprite nếu di chuyển sang trái
 
+        // Kiểm tra nhảy
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);  // Thêm lực nhảy
+            isGrounded = false; // Chỉ cho phép nhảy khi đang đứng trên mặt đất
 
+            // Gọi animation nhảy
+            animator.SetTrigger("Jump");
+        }
 
-    void FixedUpdate()
-    {
-        // Di chuyển nhân vật
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        // Cập nhật trạng thái trong Animator
+        if (!isGrounded)
+        {
+            // Nếu không chạm đất, chắc chắn animation "Jump" đang được phát
+            animator.SetBool("IsJumping", true);
+        }
+        else
+        {
+            // Nếu nhân vật chạm đất, tắt trạng thái nhảy và điều chỉnh lại "Speed"
+            animator.SetBool("IsJumping", false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,4 +66,3 @@ public class player_movement : MonoBehaviour
         }
     }
 }
-
