@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Tốc độ di chuyển
+    public float moveSpeed = 8f; // Tốc độ di chuyển
     public float jumpForce = 5f; // Lực nhảy
     public Rigidbody2D rb;      // Tham chiếu đến Rigidbody2D
     public Animator animator;   // Tham chiếu đến Animator để xử lý hoạt ảnh
