@@ -11,6 +11,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+
+    public void LoadSettingMenu()
+    {
+        // Sử dụng SceneManager để tải scene "Game"
+        SceneManager.LoadScene("SettingMenu");
+    }
     public void ExitGame()
     {
         // Thoát ứng dụng
