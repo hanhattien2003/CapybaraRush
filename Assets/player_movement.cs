@@ -11,6 +11,7 @@ public class player_movement : MonoBehaviour
     public Animator animator;   // Tham chiếu đến Animator
 
     private float horizontalInput; // Input di chuyển ngang
+    private bool isFacingRight = true; // Biến kiểm tra hướng quay nhân vật (hướng mặc định là phải)
 
     void Awake()
     {
@@ -30,8 +31,14 @@ public class player_movement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
         // Quay đầu nhân vật khi di chuyển bằng cách lật sprite
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.flipX = horizontalInput > 0; // Lật sprite nếu di chuyển sang trái
+        if (horizontalInput < 0 && !isFacingRight) // Di chuyển sang phải
+        {
+            Flip(); // Quay sang phải
+        }
+        else if (horizontalInput > 0 && isFacingRight) // Di chuyển sang trái
+        {
+            Flip(); // Quay sang trái
+        }
 
         // Kiểm tra nhảy
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -40,7 +47,7 @@ public class player_movement : MonoBehaviour
             isGrounded = false; // Chỉ cho phép nhảy khi đang đứng trên mặt đất
 
             // Gọi animation nhảy
-            animator.SetTrigger("Jump");
+         
         }
 
         // Cập nhật trạng thái trong Animator
@@ -62,7 +69,15 @@ public class player_movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            Debug.Log("Đã chạm đất");
+            //Debug.Log("Đã chạm đất");
         }
+    }
+
+    // Hàm để đổi hướng nhân vật
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight; // Đổi trạng thái hướng quay
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = !spriteRenderer.flipX; // Lật sprite
     }
 }
