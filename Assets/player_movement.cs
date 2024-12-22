@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    public float moveSpeed = 8f; // Tốc độ di chuyển
+    public float moveSpeed = 5f; // Tốc độ di chuyển
     public float jumpForce = 5f; // Lực nhảy
     public Rigidbody2D rb;      // Tham chiếu đến Rigidbody2D
     public Animator animator;   // Tham chiếu đến Animator để xử lý hoạt ảnh
@@ -25,7 +25,7 @@ public class player_movement : MonoBehaviour
     if (animator != null)
     {
         animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Horizontal", movement.sqrMagnitude);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     if (Input.GetButtonDown("Jump") && isGrounded)
@@ -38,7 +38,7 @@ public class player_movement : MonoBehaviour
     if (movement.x != 0)
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.flipX = movement.x >0; // Lật sprite nếu di chuyển sang trái
+        spriteRenderer.flipX = movement.x > 0; // Lật sprite nếu di chuyển sang trái
     }
 }
 
