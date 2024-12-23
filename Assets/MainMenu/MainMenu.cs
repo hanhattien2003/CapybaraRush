@@ -33,13 +33,4 @@ public class MainMenu : MonoBehaviour
         #endif
     }
 
-<<<<<<< HEAD
-    
-=======
-    public void LoadInfo() 
-    {
-        // Màn info dùng để nói về nhóm sáng tạo game
-        SceneManager.LoadScene("InfoMenu");
-    }
->>>>>>> 599d0b515f0257a910627cb1a80f0cb4c837974a
 }
