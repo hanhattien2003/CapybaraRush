@@ -17,6 +17,11 @@ public class MainMenu : MonoBehaviour
         // Sử dụng SceneManager để tải scene "Game"
         SceneManager.LoadScene("SettingMenu");
     }
+
+    public void LoadInfo() 
+    {
+        SceneManager.LoadScene("InfoMenu");
+    }
     public void ExitGame()
     {
         // Thoát ứng dụng
@@ -28,8 +33,5 @@ public class MainMenu : MonoBehaviour
         #endif
     }
 
-    public void LoadInfo() 
-    {
-        SceneManager.LoadScene("InfoMenu");
-    }
+    
 }

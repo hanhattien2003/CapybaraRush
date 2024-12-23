@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Levels/MainMenu.unity
     guid: a6e6aef3ff176a841a747bad3f9a8e67
   - enabled: 1
+    path: Assets/Levels/SettingMenu.unity
+    guid: d6b509c209577bb42a2e7a1940881740
+  - enabled: 1
     path: Assets/Levels/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Levels/SettingMenu.unity
-    guid: d6b509c209577bb42a2e7a1940881740
+    path: Assets/Levels/Game4.unity
+    guid: 6e737cf855605064ba8c54cc83f2444a
+  - enabled: 1
+    path: Assets/Levels/InfoMenu.unity
+    guid: cacae0d4259ec49459c576b66f22f577
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
