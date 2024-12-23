@@ -28,8 +28,8 @@ public class MainMenu : MonoBehaviour
         #endif
     }
 
-    // public void LoadInfo() 
-    // {
-    //     SceneManagement.LoadScene("InfoMenu");
-    // }
+    public void LoadInfo() 
+    {
+        SceneManagement.LoadScene("InfoMenu");
+    }
 }
