@@ -30,6 +30,6 @@ public class MainMenu : MonoBehaviour
 
     public void LoadInfo() 
     {
-        SceneManagement.LoadScene("InfoMenu");
+        SceneManager.LoadScene("InfoMenu");
     }
 }
