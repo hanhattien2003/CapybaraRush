@@ -7,14 +7,14 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadGame()
     {
-        // Sử dụng SceneManager để tải scene "Game"
+        // Load sang màn hình hiển thị 4 màn chơi
         SceneManager.LoadScene("Game");
     }
 
 
     public void LoadSettingMenu()
     {
-        // Sử dụng SceneManager để tải scene "Game"
+        // Màn setting để chỉnh sửa cài đặt game
         SceneManager.LoadScene("SettingMenu");
     }
     public void ExitGame()
@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadInfo() 
     {
+        // Màn info dùng để nói về nhóm sáng tạo game
         SceneManager.LoadScene("InfoMenu");
     }
 }
