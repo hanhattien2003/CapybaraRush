@@ -27,4 +27,9 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+
+    // public void LoadInfo() 
+    // {
+    //     SceneManagement.LoadScene("InfoMenu");
+    // }
 }
