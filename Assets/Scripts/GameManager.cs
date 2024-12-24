@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel; // Tham chiếu đến Game Over Panel trong Inspector
     [SerializeField] public GameObject player;
-    // Hàm này sẽ được gọi khi game kết thúc
 
+    // Hàm này sẽ được gọi khi game kết thúc
     public void GameOver()
     {
         if (player != null)
@@ -19,7 +19,10 @@ public class GameManager : MonoBehaviour
     // Hàm chơi lại game (Reload lại scene hiện tại)
     public void RestartGame()
     {
-        // Reload lại scene hiện tại
+        // Khi restart game, xóa dữ liệu máu trong PlayerPrefs để reset về trạng thái đầy máu
+        PlayerPrefs.DeleteKey("PlayerHealth");
+
+        // Reload lại scene hiện tại và set lại máu đầy
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -7,7 +7,7 @@ public class healthbar : MonoBehaviour
 [SerializeField] private Image currenthealthBar;
   
   private void Start(){
-    totalhealthBar.fillAmount = playerHealth.currentHealth / 10;
+    totalhealthBar.fillAmount = playerHealth.startingHealth / 10;
   }
   private void Update(){
     currenthealthBar.fillAmount = playerHealth.currentHealth / 10;
