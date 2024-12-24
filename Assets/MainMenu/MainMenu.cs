@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadGame()
     {
-        // Load sang màn hình hiển thị 4 màn chơi
+        // Load sang màn hình hiển thị game
         SceneManager.LoadScene("Game");
     }
 
@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void LoadInfo() 
+        // Load màn info
     {
         SceneManager.LoadScene("InfoMenu");
     }
