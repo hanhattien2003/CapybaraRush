@@ -149,7 +149,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1106856743}
   m_Father: {fileID: 1648015955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -421,9 +422,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadInfo
+      - m_Target: {fileID: 1648015956}
+        m_TargetAssemblyTypeName: InfoMenu, Assembly-CSharp
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -479,17 +480,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106856739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalPosition: {x: 0, y: 0, z: 1079.4728}
+  m_LocalScale: {x: 0.99959177, y: 0.99959177, z: 0.99959177}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1940826097}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 167587180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.39, y: 3.53}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 699.6802, y: 381.0539}
+  m_SizeDelta: {x: 296.18, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1469920512
 GameObject:
@@ -563,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469920512}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -649,7 +650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.7999992, y: 0}
+  m_AnchoredPosition: {x: 3.800003, y: 0}
   m_SizeDelta: {x: -12, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940826098
@@ -672,7 +673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '!'
+  m_text: BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1102e6e77cc1f340b13a2598e572a94, type: 2}
   m_sharedMaterial: {fileID: -3296813006260428113, guid: c1102e6e77cc1f340b13a2598e572a94, type: 2}
@@ -757,4 +758,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 902785727}
   - {fileID: 1469920515}
-  - {fileID: 1106856743}
