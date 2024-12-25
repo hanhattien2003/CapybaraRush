@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class InfoMenu : MonoBehaviour
 {
 
-[SerializeField] private GameObject infoBox;
+
 public void BackToMainMenu()
     {
         // Tải lại scene MainMenu
