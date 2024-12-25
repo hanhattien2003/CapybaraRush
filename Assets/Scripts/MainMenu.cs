@@ -6,47 +6,6 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    // Tham chiếu đến InfoBox và các nút
-    public GameObject infoBox;
-    public Button infoButton;
-    public Button closeButton;
-
-    void Start()
-    {
-        // Đảm bảo InfoBox bị ẩn khi bắt đầu
-        if (infoBox != null)
-        {
-            infoBox.SetActive(false);
-        }
-
-        // Gắn sự kiện cho các nút
-        if (infoButton != null)
-        {
-            infoButton.onClick.AddListener(ShowInfoBox);
-        }
-
-        if (closeButton != null)
-        {
-            closeButton.onClick.AddListener(HideInfoBox);
-        }
-    }
-
-    public void ShowInfoBox()
-    {
-        if (infoBox != null)
-        {
-            infoBox.SetActive(true);
-        }
-    }
-
-    public void HideInfoBox()
-    {
-        if (infoBox != null)
-        {
-            infoBox.SetActive(false);
-        }
-    }
-
     public void LoadGame()
     {
         // Load sang màn hình hiển thị game
