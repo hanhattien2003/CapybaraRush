@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayMenuController : MonoBehaviour
 {
+    public GameObject noSavedGameText;
     public GameObject playMenuPanel;     // Panel PlayMenu
     public GameObject difficultPanel;   // Panel DifficultPanel
 
@@ -49,7 +50,7 @@ public class PlayMenuController : MonoBehaviour
         }
         else
         {
-            Debug.Log("No saved game found.");
+            noSavedGameText.SetActive(true);
         }
     }
 }

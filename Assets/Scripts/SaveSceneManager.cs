@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveSceneManager : MonoBehaviour
 {
-    // Phương thức này được gọi khi người chơi chuyển đến một scene mới
+    // Phương thức lưu scene hiện tại
     public void SaveCurrentScene()
     {
         string currentScene = SceneManager.GetActiveScene().name;
@@ -12,7 +12,7 @@ public class SaveSceneManager : MonoBehaviour
         Debug.Log("Scene saved: " + currentScene);
     }
 
-    // Phương thức này có thể được gọi khi trò chơi kết thúc hoặc người chơi muốn quay lại
+    // Phương thức tải scene đã lưu
     public void LoadSavedScene()
     {
         if (PlayerPrefs.HasKey("SavedScene"))
@@ -27,7 +27,22 @@ public class SaveSceneManager : MonoBehaviour
         }
     }
 
-    // Thay đổi OnApplicationQuit() bằng một phương thức công khai để gán qua nút
+    // Phương thức xóa scene đã lưu
+    public void DeleteSavedScene()
+    {
+        if (PlayerPrefs.HasKey("SavedScene"))
+        {
+            PlayerPrefs.DeleteKey("SavedScene"); // Xóa key "SavedScene" khỏi PlayerPrefs
+            PlayerPrefs.Save(); // Lưu lại thay đổi
+            Debug.Log("Saved scene deleted.");
+        }
+        else
+        {
+            Debug.Log("No saved scene to delete.");
+        }
+    }
+
+    // Lưu scene khi nhấn nút
     public void SaveSceneOnButtonPress()
     {
         SaveCurrentScene(); // Lưu scene khi nút được nhấn
