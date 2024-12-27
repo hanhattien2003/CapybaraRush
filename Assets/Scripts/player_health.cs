@@ -5,23 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class player_health : MonoBehaviour
 {
-    [SerializeField] public float startingHealth; // Máu khởi đầu
+    [SerializeField] public float startingHealth; // Sẽ được set dựa trên độ khó
     public float currentHealth { get; private set; } // Máu hiện tại
 
     public GameManager gameManager; // Tham chiếu đến GameManager
-
     private bool isDead; // Kiểm tra trạng thái sống/chết
 
     public void Awake()
     {
-        // Kiểm tra có dữ liệu máu trong PlayerPrefs không, nếu không thì set máu đầy
+        // Đặt máu khởi đầu dựa trên độ khó
+        switch (DifficultyManager.GetDifficulty())
+        {
+            case DifficultyManager.DifficultyLevel.Easy:
+                startingHealth = 5f; // Độ khó dễ
+                break;
+            case DifficultyManager.DifficultyLevel.Medium:
+                startingHealth = 3f; // Độ khó vừa
+                break;
+            case DifficultyManager.DifficultyLevel.Hard:
+                startingHealth = 1f; // Độ khó khó
+                break;
+        }
+
+        // Khôi phục máu từ dữ liệu lưu hoặc đặt máu khởi đầu
         if (PlayerPrefs.HasKey("PlayerHealth"))
         {
-            currentHealth = PlayerPrefs.GetFloat("PlayerHealth"); // Khôi phục số máu đã lưu
+            currentHealth = PlayerPrefs.GetFloat("PlayerHealth");
         }
         else
         {
-            currentHealth = startingHealth; // Nếu không có thì sử dụng máu mặc định
+            currentHealth = startingHealth;
         }
 
         isDead = false; // Đảm bảo trạng thái là sống khi bắt đầu
