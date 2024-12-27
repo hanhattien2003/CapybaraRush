@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerHealth");
 
         // Reload lại scene hiện tại và set lại máu đầy
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Game");
     }
 
     // Hàm quay lại Main Menu
