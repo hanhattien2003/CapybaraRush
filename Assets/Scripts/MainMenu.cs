@@ -22,7 +22,6 @@ public class MainMenu : MonoBehaviour
     {
         // Thoát ứng dụng
         Application.Quit();
-
         // Nếu bạn đang phát trong Editor, sử dụng đoạn mã dưới để dừng ứng dụng (dành cho Unity Editor)
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

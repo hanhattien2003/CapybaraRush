@@ -11,7 +11,7 @@ public class player_movement : MonoBehaviour
     public Animator animator;   // Tham chiếu đến Animator
 
     private float horizontalInput; // Input di chuyển ngang
-    private bool isFacingRight = true; // Biến kiểm tra hướng quay nhân vật (hướng mặc định là phải)
+    private bool isFacingLeft = true; // Biến kiểm tra hướng quay nhân vật (hướng mặc định là phải)
 
     void Awake()
     {
@@ -31,13 +31,13 @@ public class player_movement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
         // Quay đầu nhân vật khi di chuyển bằng cách lật sprite
-        if (horizontalInput < 0 && !isFacingRight) // Di chuyển sang phải
+        if (horizontalInput < 0 && !isFacingLeft) // Di chuyển sang trai
         {
-            Flip(); // Quay sang phải
+            Flip(); // Quay sang trai
         }
-        else if (horizontalInput > 0 && isFacingRight) // Di chuyển sang trái
+        else if (horizontalInput > 0 && isFacingLeft) // Di chuyển sang phai
         {
-            Flip(); // Quay sang trái
+            Flip(); // Quay sang phai
         }
 
         // Kiểm tra nhảy
@@ -76,7 +76,7 @@ public class player_movement : MonoBehaviour
     // Hàm để đổi hướng nhân vật
     private void Flip()
     {
-        isFacingRight = !isFacingRight; // Đổi trạng thái hướng quay
+        isFacingLeft = !isFacingLeft; // Đổi trạng thái hướng quay
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.flipX = !spriteRenderer.flipX; // Lật sprite
     }
