@@ -10,6 +10,7 @@ public class SettingMenu : MonoBehaviour
 
     private void Start()
     {
+        
         // Tìm MusicManager trong scene (nếu đã tồn tại) sử dụng FindFirstObjectByType
         musicManager = Object.FindFirstObjectByType<MusicManager>();
 
