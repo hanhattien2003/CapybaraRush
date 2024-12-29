@@ -36,8 +36,12 @@ public class PlayMenuController : MonoBehaviour
     // Bắt đầu trò chơi mới
     private void StartNewGame()
     {
-        PlayerPrefs.DeleteAll(); // Xóa dữ liệu lưu cũ
-        SceneManager.LoadScene("Game"); // Chuyển đến màn chơi chính
+        // Xóa các dữ liệu lưu game cũ (không xóa độ khó)
+        PlayerPrefs.DeleteKey("SavedScene");
+        PlayerPrefs.DeleteKey("PlayerHealth");
+
+        // Chuyển đến màn chơi chính
+        SceneManager.LoadScene("Game"); 
     }
 
     // Tiếp tục trò chơi đã lưu
