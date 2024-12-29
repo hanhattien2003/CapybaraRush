@@ -11,6 +11,8 @@ public class player_health : MonoBehaviour
     public GameManager gameManager; // Tham chiếu đến GameManager
     private bool isDead; // Kiểm tra trạng thái sống/chết
 
+    public HealthCollectible[] healthCollectibles;
+
     public void Awake()
     {
         // Đặt máu khởi đầu dựa trên độ khó
@@ -27,6 +29,12 @@ public class player_health : MonoBehaviour
                 break;
         }
 
+        // Kiểm tra chế độ khó và ẩn HealthCollectibles nếu chế độ là Hard
+        if (DifficultyManager.GetDifficulty() == DifficultyManager.DifficultyLevel.Hard)
+        {
+            HideHealthCollectibles();
+        }
+
         // Khôi phục máu từ dữ liệu lưu hoặc đặt máu khởi đầu
         if (PlayerPrefs.HasKey("PlayerHealth"))
         {
@@ -39,6 +47,18 @@ public class player_health : MonoBehaviour
 
         isDead = false; // Đảm bảo trạng thái là sống khi bắt đầu
     }
+
+private void HideHealthCollectibles()
+{
+    // Lặp qua tất cả các đối tượng HealthCollectible và ẩn chúng
+    HealthCollectible[] healthCollectibles = FindObjectsOfType<HealthCollectible>();
+    foreach (var collectible in healthCollectibles)
+    {
+        collectible.gameObject.SetActive(false);
+    }
+}
+
+
 
     private void TakeDamage(float _damage)
     {
@@ -82,6 +102,12 @@ public class player_health : MonoBehaviour
         // Lưu lại số máu còn lại vào PlayerPrefs trước khi tải lại màn chơi
         PlayerPrefs.SetFloat("PlayerHealth", currentHealth);
 
+        // Ẩn tất cả các đối tượng HealthCollectible trước khi tải lại scene
+        if (DifficultyManager.GetDifficulty() != DifficultyManager.DifficultyLevel.Hard)
+        {
+            HideHealthCollectibles();
+        }
+
         // Tải lại màn chơi
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -93,5 +119,12 @@ public class player_health : MonoBehaviour
         {
             TakeDamage(1); // Gọi hàm TakeDamage để trừ 1 máu
         }
+    }
+
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        Debug.Log("Current Health: " + currentHealth); // Kiểm tra giá trị máu sau khi hồi phục
+        PlayerPrefs.SetFloat("PlayerHealth", currentHealth);
     }
 }
