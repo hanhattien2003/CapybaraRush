@@ -44,9 +44,4 @@ public class BackGroundMusic : MonoBehaviour
             PlayerPrefs.SetFloat("MusicVolume", volume); // Lưu âm lượng
         }
     }
-
-    public void SetSFXVolume(float volume)
-    {
-        // Nếu có SFX, bạn có thể gán âm lượng ở đây
-    }
 }

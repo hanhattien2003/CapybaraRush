@@ -55,6 +55,8 @@ public class MusicManager : MonoBehaviour
         if (sfxSource != null)
         {
             sfxSource.volume = volume;
+             PlayerPrefs.SetFloat("SFXVolume", volume);  // Lưu âm lượng vào PlayerPrefs
+            PlayerPrefs.Save();  // Lưu ngay lập tức
         }
     }
 }

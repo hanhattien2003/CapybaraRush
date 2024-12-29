@@ -40,6 +40,6 @@ public class SettingMenu : MonoBehaviour
     public void Save()
     {
         PlayerPrefs.Save(); // Lưu tất cả các thay đổi trong PlayerPrefs
-
+        SceneManager.LoadScene("MainMenu");
     }
 }

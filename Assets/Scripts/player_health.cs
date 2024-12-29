@@ -102,12 +102,6 @@ private void HideHealthCollectibles()
         // Lưu lại số máu còn lại vào PlayerPrefs trước khi tải lại màn chơi
         PlayerPrefs.SetFloat("PlayerHealth", currentHealth);
 
-        // Ẩn tất cả các đối tượng HealthCollectible trước khi tải lại scene
-        if (DifficultyManager.GetDifficulty() != DifficultyManager.DifficultyLevel.Hard)
-        {
-            HideHealthCollectibles();
-        }
-
         // Tải lại màn chơi
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -119,6 +113,7 @@ private void HideHealthCollectibles()
         {
             TakeDamage(1); // Gọi hàm TakeDamage để trừ 1 máu
         }
+        
     }
 
     public void AddHealth(float _value)
