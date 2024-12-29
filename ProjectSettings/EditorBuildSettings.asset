@@ -15,8 +15,14 @@ EditorBuildSettings:
     path: Assets/Sences/Game2.unity
     guid: cbff87840d3ed83489548690e9c5ee88
   - enabled: 1
+    path: Assets/Sences/Game3.unity
+    guid: 44fca8ccde4242d41b426bfea35805c2
+  - enabled: 1
     path: Assets/Sences/Game4.unity
     guid: 6e737cf855605064ba8c54cc83f2444a
+  - enabled: 1
+    path: Assets/Sences/EndingScence.unity
+    guid: 59dfcb2c14290f24e885e403a0c1ec25
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
