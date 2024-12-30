@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 395772409}
   m_Layer: 0
   m_Name: Crocodile
-  m_TagString: Enemies
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,8 +347,8 @@ Transform:
   m_GameObject: {fileID: 395772399}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.644, y: -0.31, z: -0.031285297}
-  m_LocalScale: {x: 4.538621, y: 3.3372254, z: 1}
+  m_LocalPosition: {x: 0.226, y: -0.352, z: -0.031285297}
+  m_LocalScale: {x: 4.773503, y: 3.3571236, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 95608764}
@@ -400,8 +400,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.028432703, y: 0.000001040521}
-  m_Size: {x: 0.8986351, y: 0.26700395}
+  m_Offset: {x: -0.028928673, y: 0.0017841548}
+  m_Size: {x: 0.87403315, y: 0.26344004}
   m_Direction: 1
 --- !u!114 &395772408
 MonoBehaviour:

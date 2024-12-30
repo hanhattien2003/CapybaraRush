@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float walkSpeed = 2f; // Tốc độ di chuyển thông thường
-    public float chaseSpeed = 4f; // Tốc độ khi đuổi theo
+    public float chaseSpeed = 3f; // Tốc độ khi đuổi theo
     public Transform leftBoundary; // Điểm giới hạn bên trái
     public Transform rightBoundary; // Điểm giới hạn bên phải
     public float chaseRange = 5f; // Phạm vi phát hiện Player
@@ -21,66 +21,84 @@ public class EnemyAI : MonoBehaviour
         currentSpeed = walkSpeed; // Khởi tạo với tốc độ di chuyển thông thường
     }
 
-    void Update()
-    {
-        if (player == null) return;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        if (distance <= chaseRange)
+        void Update()
         {
-            // Đuổi theo Player
-            ChasePlayer();
+            if (player == null) return;
+
+            float distance = Vector2.Distance(transform.position, player.position);
+
+            if (distance <= chaseRange)
+            {
+                // Đuổi theo Player
+                ChasePlayer();
+            }
+            else
+            {
+                // Di chuyển trái/phải
+                Patrol();
+            }
         }
-        else
-        {
-            // Di chuyển trái/phải
-            Patrol();
-        }
-    }
 
     private void Patrol()
-    {
-        animator.SetBool("isWalking", true); // Kích hoạt Animation Walk
-        currentSpeed = walkSpeed; // Đặt tốc độ di chuyển thông thường
+{
+    currentSpeed = walkSpeed; // Đặt tốc độ di chuyển thông thường
 
-        if (movingRight)
+    if (movingRight)
+    {
+        transform.position += Vector3.right * currentSpeed * Time.deltaTime;
+
+        // Kiểm tra nếu đã chạm tới ranh giới phải
+        if (transform.position.x >= rightBoundary.position.x)
         {
-            transform.position += Vector3.right * currentSpeed * Time.deltaTime;
-            if (transform.position.x >= rightBoundary.position.x)
-            {
-                movingRight = false;
-                Flip();
-            }
+            movingRight = false;
+            Flip();
         }
-        else
+
+        // Đảm bảo hướng di chuyển và hướng hình ảnh đồng bộ
+        if (transform.localScale.x < 0)
         {
-            transform.position += Vector3.left * currentSpeed * Time.deltaTime;
-            if (transform.position.x <= leftBoundary.position.x)
-            {
-                movingRight = true;
-                Flip();
-            }
+            Flip();
         }
     }
+    else
+    {
+        transform.position += Vector3.left * currentSpeed * Time.deltaTime;
 
-    private void ChasePlayer()
+        // Kiểm tra nếu đã chạm tới ranh giới trái
+        if (transform.position.x <= leftBoundary.position.x)
+        {
+            movingRight = true;
+            Flip();
+        }
+
+        // Đảm bảo hướng di chuyển và hướng hình ảnh đồng bộ
+        if (transform.localScale.x > 0)
+        {
+            Flip();
+        }
+    }
+}
+
+
+   private void ChasePlayer()
 {
-    animator.SetBool("isWalking", true); // Kích hoạt Animation Walk
     currentSpeed = chaseSpeed; // Đặt tốc độ khi đuổi theo
 
-    // Chỉ lấy hướng di chuyển theo trục X
+    // Chỉ di chuyển theo trục x (ngang), giữ nguyên vị trí y (dọc)
     Vector3 direction = (player.position - transform.position).normalized;
-    direction.y = 0; // Loại bỏ chiều Y để chỉ di chuyển theo chiều ngang
+    Vector3 newPosition = transform.position;
 
-    transform.position += direction * currentSpeed * Time.deltaTime;
+    newPosition.x += direction.x * currentSpeed * Time.deltaTime; // Chỉ thay đổi vị trí x
+    transform.position = newPosition;
 
-    // Lật Enemy theo hướng Player nếu cần
+    // Kiểm tra và lật hình chỉ khi hướng di chuyển thay đổi
     if ((direction.x > 0 && transform.localScale.x < 0) || (direction.x < 0 && transform.localScale.x > 0))
     {
         Flip();
     }
 }
+
+
 
 
     private void Flip()
