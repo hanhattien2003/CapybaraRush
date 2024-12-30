@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 95608764}
   - component: {fileID: 95608766}
   - component: {fileID: 95608765}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crocodile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5416732, y: -0.07523236}
+  m_Offset: {x: 0.5416732, y: -0.19151096}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -224,7 +224,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.0092945, y: 0.8495353}
+  m_Size: {x: 4.0092945, y: 0.61697805}
   m_EdgeRadius: 0
 --- !u!1 &137686523
 GameObject:
@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 137686523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.2, y: -0.33169627, z: -0.02635843}
+  m_LocalPosition: {x: 10.76, y: -0.33169627, z: -0.02635843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -898,7 +898,7 @@ Transform:
   m_GameObject: {fileID: 1086563856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.84, y: -0.33, z: -0.02635843}
+  m_LocalPosition: {x: 0.88, y: -0.33, z: -0.02635843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1232,6 +1232,10 @@ PrefabInstance:
     - target: {fileID: 4006035275753238507, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
       propertyPath: m_Name
       value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006035275753238507, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6215907045927846203, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
       propertyPath: m_Pitch

@@ -11,7 +11,7 @@ public class player_movement : MonoBehaviour
     public Animator animator;   // Tham chiếu đến Animator
 
     private float horizontalInput; // Input di chuyển ngang
-    private bool isFacingLeft = true; // Biến kiểm tra hướng quay nhân vật (hướng mặc định là phải)
+    private bool isFacingLeft = true; // Biến kiểm tra hướng quay nhân vật
 
     public GameObject jumpSoundObject; // Object chứa âm thanh nhảy
     public GameObject runSoundObject;  // Object chứa âm thanh chạy

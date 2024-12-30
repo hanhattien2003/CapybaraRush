@@ -65,18 +65,23 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void ChasePlayer()
+{
+    animator.SetBool("isWalking", true); // Kích hoạt Animation Walk
+    currentSpeed = chaseSpeed; // Đặt tốc độ khi đuổi theo
+
+    // Chỉ lấy hướng di chuyển theo trục X
+    Vector3 direction = (player.position - transform.position).normalized;
+    direction.y = 0; // Loại bỏ chiều Y để chỉ di chuyển theo chiều ngang
+
+    transform.position += direction * currentSpeed * Time.deltaTime;
+
+    // Lật Enemy theo hướng Player nếu cần
+    if ((direction.x > 0 && transform.localScale.x < 0) || (direction.x < 0 && transform.localScale.x > 0))
     {
-        animator.SetBool("isWalking", true); // Vẫn sử dụng Animation Walk
-        currentSpeed = chaseSpeed; // Đặt tốc độ khi đuổi theo
-
-        Vector3 direction = (player.position - transform.position).normalized;
-        transform.position += direction * currentSpeed * Time.deltaTime;
-
-        if ((direction.x > 0 && transform.localScale.x < 0) || (direction.x < 0 && transform.localScale.x > 0))
-        {
-            Flip();
-        }
+        Flip();
     }
+}
+
 
     private void Flip()
     {
