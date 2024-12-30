@@ -13,71 +13,100 @@ public class player_movement : MonoBehaviour
     private float horizontalInput; // Input di chuyển ngang
     private bool isFacingLeft = true; // Biến kiểm tra hướng quay nhân vật (hướng mặc định là phải)
 
+    public GameObject jumpSoundObject; // Object chứa âm thanh nhảy
+    public GameObject runSoundObject;  // Object chứa âm thanh chạy
+
+    private AudioSource jumpAudioSource; // AudioSource từ jumpSoundObject
+    private AudioSource runAudioSource;  // AudioSource từ runSoundObject
+
     void Awake()
     {
-        // Tự động tìm Rigidbody2D khi script được khởi tạo
         rb = GetComponent<Rigidbody2D>();
+
+        // Lấy AudioSource từ các GameObject được gán
+        if (jumpSoundObject != null)
+        {
+            jumpAudioSource = jumpSoundObject.GetComponent<AudioSource>();
+        }
+
+        if (runSoundObject != null)
+        {
+            runAudioSource = runSoundObject.GetComponent<AudioSource>();
+            runAudioSource.loop = true; // Bật chế độ lặp để âm thanh chạy liên tục
+        }
     }
 
     void Update()
     {
-        // Nhận đầu vào di chuyển ngang
         horizontalInput = Input.GetAxis("Horizontal");
 
         // Cập nhật tốc độ di chuyển
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
-        // Cập nhật giá trị Speed trong Animator (0 = đứng yên, >0 = chạy)
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
-        // Quay đầu nhân vật khi di chuyển bằng cách lật sprite
-        if (horizontalInput < 0 && !isFacingLeft) // Di chuyển sang trai
+        // Phát âm thanh khi di chuyển
+        if (Mathf.Abs(horizontalInput) > 0.1f && isGrounded)
         {
-            Flip(); // Quay sang trai
+            if (runAudioSource != null && !runAudioSource.isPlaying)
+            {
+                runAudioSource.Play(); // Phát âm thanh chạy
+            }
         }
-        else if (horizontalInput > 0 && isFacingLeft) // Di chuyển sang phai
+        else
         {
-            Flip(); // Quay sang phai
+            if (runAudioSource != null && runAudioSource.isPlaying)
+            {
+                runAudioSource.Stop(); // Dừng âm thanh khi không di chuyển
+            }
+        }
+
+        // Quay đầu nhân vật khi di chuyển
+        if (horizontalInput < 0 && !isFacingLeft)
+        {
+            Flip();
+        }
+        else if (horizontalInput > 0 && isFacingLeft)
+        {
+            Flip();
         }
 
         // Kiểm tra nhảy
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);  // Thêm lực nhảy
-            isGrounded = false; // Chỉ cho phép nhảy khi đang đứng trên mặt đất
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isGrounded = false;
 
-            // Gọi animation nhảy
-         
+            if (jumpAudioSource != null)
+            {
+                jumpAudioSource.Play(); // Phát âm thanh nhảy
+            }
+
+            animator.SetBool("IsJumping", true);
         }
 
-        // Cập nhật trạng thái trong Animator
         if (!isGrounded)
         {
-            // Nếu không chạm đất, chắc chắn animation "Jump" đang được phát
             animator.SetBool("IsJumping", true);
         }
         else
         {
-            // Nếu nhân vật chạm đất, tắt trạng thái nhảy và điều chỉnh lại "Speed"
             animator.SetBool("IsJumping", false);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Kiểm tra nếu nhân vật chạm đất
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            //Debug.Log("Đã chạm đất");
         }
     }
 
-    // Hàm để đổi hướng nhân vật
     private void Flip()
     {
-        isFacingLeft = !isFacingLeft; // Đổi trạng thái hướng quay
+        isFacingLeft = !isFacingLeft;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.flipX = !spriteRenderer.flipX; // Lật sprite
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 }

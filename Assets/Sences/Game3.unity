@@ -141,6 +141,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278418678}
+    - target: {fileID: 6367895078945819780, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
+      propertyPath: runSoundObject
+      value: 
+      objectReference: {fileID: 1275211574}
+    - target: {fileID: 6367895078945819780, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
+      propertyPath: jumpSoundObject
+      value: 
+      objectReference: {fileID: 1275211575}
     - target: {fileID: 7256738978792813254, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.64
@@ -782,6 +790,77 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173059819ffa9594d8c8e03b67efd50c, type: 3}
+--- !u!1001 &1275211573
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4006035275753238507, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_Name
+      value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215907045927846203, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_Pitch
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24820307
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28419456
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.158384
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440627843940305546, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+--- !u!1 &1275211574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 394986426245909944, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+  m_PrefabInstance: {fileID: 1275211573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1275211575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8342576073539483988, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+  m_PrefabInstance: {fileID: 1275211573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1278418678 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6828031101170235917, guid: 093e6cfd5aaba1547bccfd5afcf83d0a, type: 3}
@@ -1066,3 +1145,4 @@ SceneRoots:
   - {fileID: 818496262}
   - {fileID: 1053449052}
   - {fileID: 756735805}
+  - {fileID: 1275211573}
