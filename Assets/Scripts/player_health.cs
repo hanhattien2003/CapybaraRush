@@ -60,7 +60,7 @@ private void HideHealthCollectibles()
 
 
 
-    private void TakeDamage(float _damage)
+    public void TakeDamage(float _damage)
     {
         // Giảm máu và đảm bảo giá trị không nhỏ hơn 0
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
