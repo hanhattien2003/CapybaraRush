@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
 
     private float currentSpeed; // Tốc độ hiện tại của Enemy
 
+    public player_health playerHealth; // Tham chiếu đến script player_health
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -107,4 +108,24 @@ public class EnemyAI : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
+
+    
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        // Kiểm tra xem đối tượng va chạm có phải là Player không
+        if (collider.CompareTag("Player"))
+        {
+            // Đảm bảo playerHealth không null
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1f); // Gây sát thương 1 đơn vị
+            }
+            else
+            {
+                Debug.LogError("playerHealth is not assigned in EnemiesDamage!");
+            }
+        }
+    }
+
 }

@@ -359,7 +359,6 @@ GameObject:
   m_Component:
   - component: {fileID: 395772402}
   - component: {fileID: 395772401}
-  - component: {fileID: 395772405}
   - component: {fileID: 395772408}
   - component: {fileID: 395772407}
   - component: {fileID: 395772409}
@@ -440,19 +439,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 95608764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &395772405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395772399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b1e494aafb615b4c805f403a3b99a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 735285690}
 --- !u!70 &395772407
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -507,6 +493,7 @@ MonoBehaviour:
   leftBoundary: {fileID: 1086563857}
   rightBoundary: {fileID: 137686524}
   chaseRange: 5
+  playerHealth: {fileID: 735285690}
 --- !u!95 &395772409
 Animator:
   serializedVersion: 7
@@ -9773,11 +9760,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571222972439037445, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.303
       objectReference: {fileID: 0}
+    - target: {fileID: 5571222972439037445, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f20b8d538a8a8e4e8e90a8d3a146fd9, type: 3}
+    - target: {fileID: 5571222972439037445, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f20b8d538a8a8e4e8e90a8d3a146fd9, type: 3}
     - target: {fileID: 7080253707843825000, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
       propertyPath: sfxAudioSources.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7080253707843825000, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
       propertyPath: 'sfxAudioSources.Array.data[3]'
