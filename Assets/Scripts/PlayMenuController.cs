@@ -80,15 +80,6 @@ private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
             Debug.Log($"Player position restored: {player.transform.position}");
         }
     }
-
-    if (PlayerPrefs.HasKey("PlayerHealth"))
-    {
-        int health = PlayerPrefs.GetInt("PlayerHealth");
-        Debug.Log($"Player health restored: {health}");
-        // Gọi script của nhân vật để cập nhật sức khỏe nếu cần
-        // player.GetComponent<PlayerHealth>().SetHealth(health);
-    }
-
     SceneManager.sceneLoaded -= OnSceneLoaded; // Hủy đăng ký sự kiện
 }
 

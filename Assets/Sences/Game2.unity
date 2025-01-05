@@ -1025,6 +1025,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8342576073539483988, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
   m_PrefabInstance: {fileID: 1300160234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1300160237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6851331840140970683, guid: 767ccb7f948df244184f50e02c4a99e4, type: 3}
+  m_PrefabInstance: {fileID: 1300160234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1375957896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,6 +1046,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3617274592210983402, guid: 173059819ffa9594d8c8e03b67efd50c, type: 3}
+      propertyPath: healingSoundObject
+      value: 
+      objectReference: {fileID: 1300160237}
     - target: {fileID: 3861456242148342130, guid: 173059819ffa9594d8c8e03b67efd50c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.16
@@ -1219,6 +1228,10 @@ PrefabInstance:
       propertyPath: sceneName
       value: Game3
       objectReference: {fileID: 0}
+    - target: {fileID: 5568121856790517660, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
+      propertyPath: levelUpSoundObject
+      value: 
+      objectReference: {fileID: 1300160237}
     - target: {fileID: 8134713482653677807, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
       propertyPath: m_Size.x
       value: 0.2813034
