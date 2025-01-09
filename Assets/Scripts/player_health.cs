@@ -109,10 +109,10 @@ private void HideHealthCollectibles()
     private void Update()
     {
         // Test: Nhấn phím E để gây sát thương 1 đơn vị
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(1); // Gọi hàm TakeDamage để trừ 1 máu
-        }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     TakeDamage(1); // Gọi hàm TakeDamage để trừ 1 máu
+        // }
         
     }
 
