@@ -72,10 +72,11 @@ public class player_movement : MonoBehaviour
         }
 
         // Kiểm tra nhảy
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("jump") && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+
 
             if (jumpAudioSource != null)
             {
@@ -93,8 +94,11 @@ public class player_movement : MonoBehaviour
         {
             animator.SetBool("IsJumping", false);
         }
-    }
+        // Kiểm tra nhảy khi nhấn phím Space
 
+
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
