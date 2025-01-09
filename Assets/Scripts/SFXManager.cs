@@ -22,7 +22,7 @@ public class SFXManager : MonoBehaviour
     {
         foreach (AudioSource source in sfxAudioSources)
         {
-            source.volume = volume;
+                source.volume = volume;
         }
     }
 
