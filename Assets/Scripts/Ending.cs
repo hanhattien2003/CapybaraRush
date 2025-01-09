@@ -9,9 +9,13 @@ public class Ending : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         if (PlayerPrefs.HasKey("SavedScene"))
         {
-            PlayerPrefs.DeleteKey("SavedScene"); // Xóa key "SavedScene" khỏi PlayerPrefs
-            PlayerPrefs.Save(); // Lưu lại thay đổi
-            Debug.Log("Saved scene deleted.");
+            PlayerPrefs.DeleteKey("SavedScene");
+            PlayerPrefs.DeleteKey("PlayerPosX");
+            PlayerPrefs.DeleteKey("PlayerPosY");
+            PlayerPrefs.DeleteKey("PlayerPosZ");
+
+            PlayerPrefs.Save();
+            Debug.Log("Saved scene and position deleted.");
         }
     }
     

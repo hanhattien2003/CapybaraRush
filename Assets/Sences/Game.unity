@@ -607,7 +607,7 @@ Transform:
   m_GameObject: {fileID: 471005088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.2, y: 0.81, z: -10}
+  m_LocalPosition: {x: 14.57, y: 0.81, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -832,7 +832,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.2, y: 0.81, z: -10}
+  m_LocalPosition: {x: 14.57, y: 0.81, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28321,7 +28321,7 @@ PrefabInstance:
       objectReference: {fileID: 3619228469219370818}
     - target: {fileID: 7256738978792813254, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.2
+      value: 14.57
       objectReference: {fileID: 0}
     - target: {fileID: 7256738978792813254, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28575,6 +28575,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5568121856790517660, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
+      propertyPath: sceneName
+      value: Game2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568121856790517660, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
       propertyPath: levelUpObject
       value: 
       objectReference: {fileID: 7665504}
@@ -28617,6 +28621,10 @@ PrefabInstance:
     - target: {fileID: 8666559723772460298, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666559723772460298, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8666559723772460298, guid: 54c4a33f28eb365489aa0bebea528f66, type: 3}
       propertyPath: m_SortingLayerID
