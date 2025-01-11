@@ -24035,6 +24035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveSceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6691624854263904905, guid: 7bb2bedc7610284418d19282d5fc7cc3, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 574324029}
     - target: {fileID: 8170116771679571598, guid: 7bb2bedc7610284418d19282d5fc7cc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2707034
@@ -24652,6 +24656,34 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: df4c3f5555ae7b84a9bb78aedcd09892, type: 2}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 818496263}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveSceneOnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SaveSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348989961407740956, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3514944886629219539, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -24743,7 +24775,7 @@ PrefabInstance:
     - target: {fileID: 5336693475694511780, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
       propertyPath: playerHealth
       value: 
-      objectReference: {fileID: 2091017111}
+      objectReference: {fileID: 0}
     - target: {fileID: 6058887424204306334, guid: 4ee21424bcf69494aacbb2a826b52df6, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -24885,17 +24917,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9081234620495406507, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
   m_PrefabInstance: {fileID: 574324028}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2091017111 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 966007902894963733, guid: 1bffebbf175ccc94cbf043466f4dfacc, type: 3}
-  m_PrefabInstance: {fileID: 574324028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091017110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd53c90c7e79e28419938fdbb8417ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

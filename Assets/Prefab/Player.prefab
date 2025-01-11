@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4021076343972946859}
   - component: {fileID: 6367895078945819780}
   - component: {fileID: 2975949058137139679}
-  - component: {fileID: 966007902894963733}
-  m_Layer: 0
+  - component: {fileID: 8382136251366298573}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 590140173
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6354354845572732694, guid: 091289a3ec090b4418ce7b9762a3b2e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03514439, y: -0.029922426}
+  m_Offset: {x: -0.033869445, y: -0.03121522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +136,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.74977195, y: 0.55828726}
+  m_Size: {x: 0.74722207, y: 0.56087285}
   m_EdgeRadius: 0
 --- !u!50 &4021076343972946859
 Rigidbody2D:
@@ -181,6 +181,8 @@ MonoBehaviour:
   moveSpeed: 10
   rb: {fileID: 4021076343972946859}
   animator: {fileID: 2975949058137139679}
+  jumpSoundObject: {fileID: 0}
+  runSoundObject: {fileID: 0}
 --- !u!95 &2975949058137139679
 Animator:
   serializedVersion: 7
@@ -203,7 +205,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &966007902894963733
+--- !u!114 &8382136251366298573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,8 +214,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9081234620495406507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd53c90c7e79e28419938fdbb8417ade, type: 3}
+  m_Script: {fileID: 11500000, guid: dc40a8a27365b9e43b38dc3f2f5a3379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 0
   gameManager: {fileID: 0}
+  healthCollectibles:
+  - {fileID: 0}
