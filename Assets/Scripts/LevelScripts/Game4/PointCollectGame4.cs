@@ -11,19 +11,11 @@ public class PointCollect : MonoBehaviour
         door.SetActive(true);
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Kiểm tra nếu player chạm vào một object có tag "points"
-        if (other.CompareTag("points"))
-        {
-            other.gameObject.SetActive(false); // Ẩn Point đã thu thập
-            pointsCollected++; // Tăng số điểm đã thu thập
-
-            // Nếu đủ điểm, ẩn cửa
-            if (pointsCollected == GameObject.FindGameObjectsWithTag("points").Length)
-            {
-                door.SetActive(false);
-            }
+        if(collision.CompareTag("Points") {
+            Debug.Log("Hit point");
+            pointsCollected++;
         }
     }
 }
