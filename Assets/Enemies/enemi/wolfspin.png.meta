@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolfspin_0: -3108079212316811817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

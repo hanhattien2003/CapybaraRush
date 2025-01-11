@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bearspin_0: 3886459602806437654
+      bearspin_1: 2816787525787510407
+      bearspin_2: 5707547001766554328
+      bearspin_3: 8992324712188528303
+      bearspin_4: 1940210256989024528
+      bearspin_5: 192605279584804433
+      bearspin_6: 734412063979993659
+      bearspin_7: -2895363235483368236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
