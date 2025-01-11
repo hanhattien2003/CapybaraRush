@@ -4,7 +4,7 @@ public class PointCollectGame4 : MonoBehaviour
 {
     public GameObject door; // Cửa sẽ ẩn khi đủ điểm
     private int pointsCollected = 0; // Biến lưu số điểm đã thu thập
-    public int pointsRequired = 2; // Số điểm cần để mở cửa
+    public int pointsRequired = 5; // Số điểm cần để mở cửa
 
     void Start()
     {
